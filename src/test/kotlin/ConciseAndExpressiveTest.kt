@@ -9,6 +9,8 @@ class ConciseAndExpressiveTest {
         assertEquals(3, result)
     }
 
+    private fun sum(num1: Int, num2: Int) = num1 + num2
+
     @Test
     fun stringTemplate() {
         val name = "Kotlin"
@@ -18,6 +20,14 @@ class ConciseAndExpressiveTest {
         assertEquals("Language is Kotlin, Version is 2.0", result)
     }
 
-    private fun sum(num1: Int, num2: Int) = num1 + num2
+    @Test
+    fun greet() {
+        greetWithDefault("Kim")   // Kim
+        greetWithDefault()              // Lee
+    }
+
+    private fun greetWithDefault(name: String = "Lee") {
+        println("Hello $name!")
+    }
 }
 
